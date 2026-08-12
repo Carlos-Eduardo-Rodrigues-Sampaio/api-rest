@@ -14,7 +14,7 @@ const alunos = [
 
 // Função auxiliar
 function buscarAlunoPorId(id) {
-    return alunos.filter( aluno => aluno.id == id )
+    return alunos.find(aluno => aluno.id == id)
 }
 
 function buscarIndexAluno(id) {
@@ -45,6 +45,10 @@ app.delete('/alunos/:id', (req, res) => {
     res.send(`Aluno com id ${req.params.id} excluido com sucesso!`)
  })
 
- // 
+ // Buscar aluno pelo Id
+ app.get('/alunos/:id', (req, res) => {
+    const aluno = buscarAlunoPorId(req.params.id)
+    res.status(200).json(aluno)
+ })
 
 export default app
