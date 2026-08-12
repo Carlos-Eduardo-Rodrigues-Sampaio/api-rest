@@ -14,7 +14,7 @@ const alunos = [
 
 // Função auxiliar
 function buscarAlunoPorId(id) {
-    return alunos.find(aluno => aluno.id == id)
+    return alunos.filter(aluno => aluno.id == id)
 }
 
 function buscarIndexAluno(id) {
