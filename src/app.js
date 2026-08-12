@@ -51,4 +51,12 @@ app.delete('/alunos/:id', (req, res) => {
     res.status(200).json(aluno)
  })
 
+ // Update
+ app.put('/alunos/:id', (req, res) => {
+    let index = buscarIndexAluno(req.params.id)
+    alunos[index].nome = req.body.nome
+    alunos[index].curso = req.body.curso
+    res.send(alunos)
+ })
+
 export default app
